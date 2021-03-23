@@ -1,0 +1,165 @@
+html{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+  width: 80%;
+  margin-left: 10%;
+}
+    
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  margin: auto;
+}
+
+h3{
+  margin: 0;
+  padding: 50px;
+}
+
+.navBar {
+  position: relative;
+  margin: auto;
+  border: 2px solid black;
+  background-color: rgb(240, 240, 240);
+  font-size: 20px;
+  text-align: center;
+}
+
+h3, h4{
+  max-width: 80%; 
+  position: relative;
+  margin: auto;
+}
+
+table {
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+tr, td {
+  padding: 25px 50px 10px 60px;
+}
+
+td{
+  margin: 0;
+  border-top: 1px solid rgb(158, 158, 158);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-left: 5%;
+	width: 90%;
+  background-color: white;
+  border-top: 2px solid rgb(51, 51, 51);    
+  text-align: center;
+}
+
+  .back{
+    float: right;
+  }
+
+.add {
+  float: right;
+}
+
+.topnav {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+  
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+  
+.topnav a:hover {
+  background-color: #1b81d4;
+  color: black;
+}
+  
+/* Active/current link */
+.topnav a.active {
+  color: white;
+}
+  
+/* Style the input container */
+.topnav .login-container {
+  float: left;
+}
+  
+.topnav input {
+  padding: 11px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; 
+  border-radius: 10px;
+  border: 2px solid rgb(158, 158, 158);
+
+}
+  
+.topnav .login-container button {
+  padding: 11px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; 
+  border-radius: 10px;
+  background-color: rgb(0, 153, 255);
+  color: white;
+  border: 1px solid rgb(158, 158, 158);
+}
+  
+.topnav .login-container button:hover {
+  background: #1c7ac7;
+}
+  
+
+.topnav .login-container label{
+  font-size: 40px;
+}
+
+.aeratext input{
+  width: 20%;
+  height: 30px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+
+}
+
+label{
+  font-size: 18px;
+}
+
+input[type=text]:focus {
+  background-color: rgba(187, 238, 255, 0.384);
+}
+
+textarea {
+  width: 20%;
+  height: 70px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
