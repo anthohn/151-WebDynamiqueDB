@@ -1,6 +1,4 @@
 <?php 
-require "database.php";
-$db = new Database();
 require "header.php";?>
 <form method="POST" action="addTeacher.php">
     <h2>Ajout d'un enseignant</h2>
@@ -43,7 +41,7 @@ require "header.php";?>
     </ul>
 </form>
 <div class="test">
-    <a href="index.php"><img width="100px" src="userContent/backArrow.svg"></img></a>
+    <a href="index.php"><img width="100px" src="../../userContent/backArrow.svg"></img></a>
 </div>
 <?php
 

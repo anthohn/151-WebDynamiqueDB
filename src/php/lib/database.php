@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Auteur : Anthony Höhn
  * Date : 15.03.2021
@@ -7,7 +6,6 @@
  */
 
  class Database {
-
     // Variable de classe
     private $connector;
 

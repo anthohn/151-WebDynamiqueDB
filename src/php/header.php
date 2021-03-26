@@ -1,3 +1,6 @@
+<?php require "lib/database.php";
+$db = new Database();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -8,7 +11,7 @@
 		Description : 
 		-->
         <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
         <title>Surnom</title>
     </head>
     <body>
