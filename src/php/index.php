@@ -5,7 +5,7 @@ $teachers = $db->getAllTeachers();
         
         <table>
             <tr>
-                <h3>Liste des enseignants <div class="add"><a href="addTeacher.php"><img src="../../userContent/add.svg" height="50"></img></a></div> </h3>       
+                <h3>Lisete des enseignants <div class="add"><a href="addTeacher.php"><img src="../../userContent/add.svg" height="50"></img></a></div> </h3>       
                 <th>Nom</th>
                 <th>Surnom</th>
                 <th>Actions</th>
