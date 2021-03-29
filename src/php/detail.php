@@ -5,10 +5,12 @@ $teachers = $db->getOneTeacher($id);
 ?>
             <?php foreach($teachers as $teacher): ?> 
             <h3>Détails : <?= $teacher["teaName"] ?><?= " ";?><?= $teacher["teaFirstname"] ?>
-                <?php if($teacher["teaGender"] == "M") {
+                <?php if($teacher["teaGender"] == "M")
+                {
                     echo '<img src="../../userContent/maleGender.png" width"22px" height="22px" alt="icons">';
                 }
-                else {
+                else 
+                {
                     echo '<img src="../../userContent/femaleGender.png" width"22px" height="22px" alt="icons">';
                 }?>
             </h3>
