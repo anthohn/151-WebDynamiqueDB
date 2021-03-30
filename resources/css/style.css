@@ -164,3 +164,8 @@ textarea {
   background-color: #f8f8f8;
   resize: none;
 }
+
+#btnSubmit, #btnDelete {
+  width: 95px;
+  height: 28px;
+}

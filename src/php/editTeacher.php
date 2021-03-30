@@ -8,9 +8,25 @@ $teachers = $db->getOneTeacher($id);
     <h2>Ajout d'un enseignant</h2>
     <ul>
         <li>
-            <input type="radio" name="gender" id="man" value="M">Homme 
-            <input type="radio" name="gender" id="woman" value="W">Femme
-            <input type="radio" name="gender" id="other" value="O">Autre
+        <?php
+            if ($teacher["teaGender"] == "M")
+            {
+                echo '<input type="radio" name="gender" id="man" value="M" checked>Homme';
+                echo '<input type="radio" name="gender" id="woman" value="W">Femme';
+                echo  '<input type="radio" name="gender" id="other" value="O">Autre';
+            }
+            else if ($teacher["teaGender"] == "W")
+            {
+                echo '<input type="radio" name="gender" id="man" value="M">Homme';
+                echo '<input type="radio" name="gender" id="woman" value="W"checked>Femme';
+                echo  '<input type="radio" name="gender" id="other" value="O">Autre';
+            }
+            else if ($teacher["teaGender"] == "O")
+            {
+                echo '<input type="radio" name="gender" id="man" value="M">Homme';
+                echo '<input type="radio" name="gender" id="woman" value="W">Femme';
+                echo  '<input type="radio" name="gender" id="other" value="O" checked>Autre';
+            }?>
         </li>
         <div class="aeratext">
             <li>            
@@ -32,14 +48,17 @@ $teachers = $db->getOneTeacher($id);
         </li>
         <li>
             <select name="section">
-                <option value="section">Section</option>
-                <option value="informatique">Informatique</option>
-                <option value="theorie">Théorie</option>
+            <?php
+        
+
+                ?>
             </select>
         </li>        
         <li>
-            <input type="submit" name="submit" id="submit" value="submit">
-            <button type="reset" id="" name="">Effacer</button>
+           <div class="btnAdding">
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
+                <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
+            </div>
         </li>
     </ul>
 </form>

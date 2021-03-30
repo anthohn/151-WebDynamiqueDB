@@ -57,3 +57,17 @@ INSERT INTO t_teacher (teaFirstname, teaName, teaGender, teaNickname, teaOrigin)
 ("Cyril", "Sokoloff", "M", "Story zzz", "Aime beacoup raconter des histoires.."),
 ("Isabelle", "Stucki", "W", "Cookie", "Nous a offert de cookies et un gâteau lors du premier cours."
 );
+
+INSERT INTO t_teaches (fkteacher, fksection) VALUES 
+(1, 2),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1),
+(9, 1),
+(10, 1),
+(11, 1
+);

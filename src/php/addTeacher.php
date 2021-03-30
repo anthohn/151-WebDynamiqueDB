@@ -1,5 +1,7 @@
 <?php 
-require "header.php";?>
+require "header.php";
+$sections = $db->getAllSections(); 
+?>
 <form method="POST" action="addTeacher.php">
     <h2>Ajout d'un enseignant</h2>
     <ul>
@@ -24,19 +26,25 @@ require "header.php";?>
         </div>    
         <li>
         <label for="origin">Origine :</label>
-        <textarea id="origin" name="origin"> 
-        </textarea>
+        <textarea id="origin" name="origin"></textarea>
         </li>
         <li>
-            <select name="section">
-                <option value="section">Section</option>
-                <option value="informatique">Informatique</option>
-                <option value="theorie">Théorie</option>
-            </select>
+            <div class="selectSection input">
+                <select name="section" id="section">
+                    <option value="0">Section </option>
+                    <?php foreach($sections as $section) : ?>
+                        <option value="<?= $section["idSection"]; ?>"><?= $section["secName"]; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
         </li>        
         <li>
-            <input type="submit" name="submit" id="submit" value="submit">
-            <button type="reset" id="" name="">Effacer</button>
+            <div class="button">
+                <div class="btnAdding">
+                    <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
+                    <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
+                </div>
+            </div>
         </li>
     </ul>
 </form>
@@ -45,19 +53,18 @@ require "header.php";?>
 </div>
 <?php
 
-if(isset($_POST["submit"]))
+if(isset($_POST["btnSubmit"]))
 {
-    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]))
+    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]) || $_POST["section"] == 0 )
     {
-        echo "Veuillez renseignez tous les champs.";
+        echo "<h1 style='background-color:red; border-radius: 20px; text-align:center; height: 50px; width: 600px;'>Veuillez renseigner tous les champs !</h1>";
     } 
     else {
         $teachers = $db->getAllTeachers();
-
-        $db->addTeacher($_POST['gender'], $_POST['name'], $_POST['surname'], $_POST['nickname'], $_POST['origin']);
-        // $db->addTeacherSection($section['idSection'], max($teachers['idTeachers']) + 1);
-        echo "<h1>L'enseigant a bien été ajouté</h1>";
-        // header('Location: index.php');
+        $db->addTeacher( $_POST['name'], $_POST['surname'],$_POST['gender'], $_POST['nickname'], $_POST['origin']);
+        $db->addTeacherSection($section['idSection']);
+        echo "<h1 style='background-color:green; border-radius: 20px; text-align:center; height: 50px; width: 600px; color: white;'>L'enseigant a bien été ajouté !</h1>";
+        
     }
 }
 ?>
