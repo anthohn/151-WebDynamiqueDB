@@ -2,10 +2,14 @@
 require "header.php";
 $id = $_GET["idTeacher"];
 $teachers = $db->getOneTeacher($id);
-?>
+$OneSections = $db->getOneTeacherSection($id);
+$sections = $db->getAllSections(); 
+?> 
+
+
 <?php foreach($teachers as $teacher): ?> 
-<form method="POST" action="addTeacher.php">
-    <h2>Ajout d'un enseignant</h2>
+<form method="POST" action="editTeacher.php?idTeacher=<?= $teacher["idTeacher"]; ?>"> 
+    <h2>Modifications d'un enseignant</h2>
     <ul>
         <li>
         <?php
@@ -47,16 +51,21 @@ $teachers = $db->getOneTeacher($id);
         <textarea id="origin" name="origin"><?= $teacher["teaOrigin"] ?></textarea>
         </li>
         <li>
-            <select name="section">
-            <?php
-        
+        <select name="section" id="section">
+            <?php foreach($OneSections as $OneSection) : ?>
+                <option value="0"><?= $OneSection["secName"] ?></option>
+            <?php endforeach; ?>
 
-                ?>
-            </select>
+            <?php foreach($sections as $section) : ?>
+                <option value="<?= $section["idSection"]; ?>"><?= $section["secName"]; ?></option>
+            <?php endforeach; ?>
+           
+    </select>
+    0
         </li>        
         <li>
            <div class="btnAdding">
-                <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Modifier" />
                 <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
             </div>
         </li>
@@ -68,19 +77,18 @@ $teachers = $db->getOneTeacher($id);
 </div>
 <?php
 
-if(isset($_POST["submit"]))
+if(isset($_POST["btnSubmit"]))
 {
-    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]))
+    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]) )
     {
-        echo "Veuillez renseignez tous les champs.";
+        echo "<h1 style='background-color:red; border-radius: 20px; text-align:center; height: 50px; width: 600px;'>Veuillez renseigner tous les champs !</h1>";
     } 
     else {
         $teachers = $db->getAllTeachers();
 
-        $db->addTeacher($_POST['gender'], $_POST['name'], $_POST['surname'], $_POST['nickname'], $_POST['origin']);
+        $db->updateTeacher($id, $_POST['name'], $_POST['surname'], $_POST['gender'], $_POST['nickname'], $_POST['origin']);
         // $db->addTeacherSection($section['idSection'], max($teachers['idTeachers']) + 1);
-        echo "<h1>L'enseigant a bien été ajouté</h1>";
-        // header('Location: index.php');
+        echo "<h1 style='background-color:green; border-radius: 20px; text-align:center; height: 50px; width: 600px; color: white;'>L'enseigant a bien été modifié !</h1>";
     }
 }
 ?>

@@ -5,16 +5,19 @@ $teachers = $db->getOneTeacher($id);
 $sections = $db->getOneTeacherSection($id);
 ?>
         <?php foreach($teachers as $teacher): ?> 
-        <h3>Détails : <?= $teacher["teaName"] ?><?= " ";?><?= $teacher["teaFirstname"] ?>
-        </div>
+        <h3>Détails : <?= $teacher["teaName"] ?><?= " ";?><?= $teacher["teaFirstname"] ?><p>Sexe :
             <?php if($teacher["teaGender"] == "M")
             {
                 echo '<img src="../../userContent/maleGender.png" width"22px" height="22px" alt="icons">';
             }
-            else 
+            else if ($teacher["teaGender"] == "W")
             {
                 echo '<img src="../../userContent/femaleGender.png" width"22px" height="22px" alt="icons">';
-            }?>
+            }
+            else 
+            {
+                echo "Aute";
+            }?></p> 
         <?php foreach($sections as $section): ?> 
         <p>Section : <?= $section["secName"] ?></p> 
         <?php endforeach; ?>   

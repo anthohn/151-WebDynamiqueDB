@@ -2,7 +2,7 @@
 require "header.php";
 $teachers = $db->getAllTeachers();
 ?>   
-        <table>
+       <table>
             <tr>
                 <h3>Liste des enseignants <div class="add"><a href="addTeacher.php"><img src="../../userContent/add.svg" height="50"></img></a></div> </h3>       
                 <th>Nom</th>
