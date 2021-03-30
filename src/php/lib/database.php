@@ -49,7 +49,6 @@
         $query = "SELECT * FROM t_teacher ORDER BY idTeacher DESC";
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
-
         $this->unsetData($reqExecuted);
         return $results;
     }
