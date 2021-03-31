@@ -14,9 +14,9 @@ $sections = $db->getOneTeacherSection($id);
             {
                 echo '<img src="../../userContent/femaleGender.png" width"22px" height="22px" alt="icons">';
             }
-            else 
+            else if ($teacher["teaGender"] == "O")
             {
-                echo "Aute";
+                echo "Autre";
             }?></p> 
         <?php foreach($sections as $section): ?> 
         <p>Section : <?= $section["secName"] ?></p> 

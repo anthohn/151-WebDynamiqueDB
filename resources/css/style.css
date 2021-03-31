@@ -38,22 +38,54 @@ h3, h4{
   margin: auto;
 }
 
-table {
+.scroll
+{
   width: 90%;
   margin-left: 5%;
 }
-
-
-tr, td {
-  padding: 25px 50px 10px 60px;
+.scroll thead
+{
+  background-color: rgb(209, 209, 209);
+  font-size: 20px;
+  height: 20px;
+  display:block;
 }
 
-td{
-  margin: 0;
-  border-top: 1px solid rgb(158, 158, 158);
-  border-collapse: collapse;
+.scroll tbody
+{
+  width: 100%;
+  display:block;
+  overflow-y: scroll;
+  max-height:35em;
+}
+ 
+.scroll th 
+{
+  width: 500px;
   text-align: center;
 }
+
+.scroll td
+{
+  border-top: 1px solid rgb(158, 158, 158);
+  font-size: 22px;
+  height: 40px;
+  width: 500px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer{
   position: fixed;
