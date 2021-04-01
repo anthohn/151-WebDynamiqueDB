@@ -1,5 +1,5 @@
 html{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 main{
@@ -36,17 +36,20 @@ h3, h4{
   max-width: 80%; 
   position: relative;
   margin: auto;
+  font-size: 30px;
 }
 
 .scroll
 {
+  border: 2px solid black;
   width: 90%;
   margin-left: 5%;
 }
 .scroll thead
 {
   background-color: rgb(209, 209, 209);
-  font-size: 20px;
+  font-size: 24px;
+  padding-top:10px;
   height: 20px;
   display:block;
 }
@@ -56,7 +59,7 @@ h3, h4{
   width: 100%;
   display:block;
   overflow-y: scroll;
-  max-height:35em;
+  max-height:32em;
 }
  
 .scroll th 
@@ -67,15 +70,19 @@ h3, h4{
 
 .scroll td
 {
-  border-top: 1px solid rgb(158, 158, 158);
-  font-size: 22px;
+  border-bottom: 1px solid rgb(158, 158, 158);
+  font-size: 24px;
   height: 40px;
   width: 500px;
   text-align: center;
 }
 
 
-
+select {
+  width: 150px;
+  height: 28px;
+  margin: 10px 0 10px;
+}
 
 
 
@@ -182,7 +189,6 @@ footer{
 
 label{
   font-size: 18px;
-  /* width: 100px; */
 }
 
 input[type=text]:focus {

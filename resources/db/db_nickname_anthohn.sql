@@ -40,6 +40,10 @@ CREATE TABLE t_user(
 	usePassword varchar(62) NOT NULL,
 	useIsAdmin smallint(1) NOT NULL);
 
+INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
+("admin", "admin", 1
+);
+
 INSERT INTO t_section (secName) VALUES 
 ("Informatique"),
 ("Théorie");
@@ -48,9 +52,13 @@ INSERT INTO t_teacher (teaFirstname, teaName, teaGender, teaNickname, teaOrigin)
 ("Karim", "Bourahla", "M", "Ca va?? Vous allez bien ??", "Il dit toujours ça lm a O"),
 ("Michel","Delgado","M","THE G.O.A.T","Meilleur prof :O"),
 ("Patrick", "Chenaux", "M", "?", "C'est qui ?"),
-("Patrick", "Olivier", "M", "Sportif", "sportif et gentil."),
+("Patrick", "Olivier", "O", "Sportif", "sportif et gentil."),
 ("Aurélie", "Curchod", "W", "Classe", "On la voit que en scéance de classe."),
 ("Laurent", "Duding", "M", "Covid", "On l'a eu lors des rattrapage covid."),
+("Olivier", "Merenda", "M", "Merenda Consulting", "Entreprise factisse lors de son cours."),
+("Salulessa", "Salulessa", "M", "WE MOVE TO YOU", "Phrase qu'il dit quand nous lisons et qu'il change d'élève."),
+("Sarah", "Ridet", "W", "OKAYYYY", "Dit ça à chaque fin de pause."),
+("Jean-Christophe", "Jaggi", "M", "KILLIAANNNN", "Il dit KilliEn à la place de killian."),
 ("Jonathan", "Gander", "M", "the best", "Prof jeune sympathique est dynamqique, très gentil !!"),
 ("Gilbert", "Gruaz", "M", "Gruazerie", "Car il nous fait toujours des gruazeries."),
 ("Betrand", "Sahli", "M", "Médiateur", "Car c'est un médiateur."),
@@ -59,15 +67,19 @@ INSERT INTO t_teacher (teaFirstname, teaName, teaGender, teaNickname, teaOrigin)
 );
 
 INSERT INTO t_teaches (fkteacher, fksection) VALUES 
-(1, 2),
+(1, 1),
 (2, 1),
 (3, 1),
 (4, 1),
 (5, 1),
 (6, 1),
-(7, 1),
-(8, 1),
-(9, 1),
-(10, 1),
-(11, 1
+(7, 2),
+(8, 2),
+(9, 2),
+(10, 2),
+(11, 1),
+(12, 1),
+(13, 1),
+(14, 1),
+(15, 1
 );

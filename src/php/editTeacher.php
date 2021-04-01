@@ -34,15 +34,15 @@ $sections = $db->getAllSections();
         </li>
         <div class="aeratext">
             <li>            
-                <label for="name">Nom :</label>
+                <label for="name">____Nom :</label>
                 <input type="text" name="name" id="name" value="<?= $teacher["teaName"] ?>">
             </li>
             <li>
-                <label for="surname">Prénom :</label>
+                <label for="surname">_Prénom :</label>
                 <input type="text" name="surname" id="surname" value="<?= $teacher["teaFirstname"] ?>">
             </li>
             <li>
-                <label for="nickname">Surnom :</label>
+                <label for="nickname">_Surnom :</label>
                 <input type="text" name="nickname" id="nickname" value="<?= $teacher["teaNickname"] ?>">
             </li>
         </div>    
@@ -61,7 +61,6 @@ $sections = $db->getAllSections();
             <?php endforeach; ?>
            
     </select>
-    0
         </li>        
         <li>
            <div class="btnAdding">
@@ -79,16 +78,16 @@ $sections = $db->getAllSections();
 
 if(isset($_POST["btnSubmit"]))
 {
-    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]) )
+    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]))
     {
-        echo "<h1 style='background-color:red; border-radius: 20px; text-align:center; height: 50px; width: 600px;'>Veuillez renseigner tous les champs !</h1>";
+        echo "<h1 style='background-color:red; border-radius: 20px; text-align:center; height: 40px; width: 650px;'>Veuillez renseigner tous les champs !</h1>";
     } 
     else {
         $teachers = $db->getAllTeachers();
 
         $db->updateTeacher($id, $_POST['name'], $_POST['surname'], $_POST['gender'], $_POST['nickname'], $_POST['origin']);
         // $db->addTeacherSection($section['idSection'], max($teachers['idTeachers']) + 1);
-        echo "<h1 style='background-color:green; border-radius: 20px; text-align:center; height: 50px; width: 600px; color: white;'>L'enseigant a bien été modifié !</h1>";
+        echo "<h1 style='background-color:green; border-radius: 20px; text-align:center; height: 40px; width: 650px; color: white;'>L'enseigant a bien été modifié !</h1>";
     }
 }
 ?>

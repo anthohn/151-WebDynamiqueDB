@@ -50,7 +50,7 @@
 
     //récupere tous les enseignant -> pour la page d'accueil
     public function getAllTeachers(){
-        $query = "SELECT * FROM t_teacher ORDER BY idTeacher DESC";
+        $query = "SELECT * FROM t_teacher";
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -133,7 +133,7 @@
     }
 
     //modification d'enseignant dans la bdd
-    public function updateTeacher($id, $surname, $firstname, $gender , $nickname, $origin){
+    public function updateTeacher($id, $firstname, $surname, $gender , $nickname, $origin){
         $query = "UPDATE t_teacher SET teaFirstname = :surname,  teaName = :firstname,  teaGender = :gender , teaNickname = :nickname, teaOrigin = :origin WHERE idTeacher = :id";
         $binds = array(
             0 => array(
@@ -205,16 +205,6 @@
         return $results;
     }
 
-
-
-
-
-
-
-
-
-
-
     //ajout de section pour un ensegniant 
     public function addTeacherSection($section){
         $query = "INSERT INTO t_teaches (fkteacher, fksection) VALUES (LAST_INSERT_ID(), :fksection)";
@@ -228,7 +218,6 @@
         $results = $this->queryPrepareExecute($query, $binds);
         return $results;
     }
-    
 
     //Supprimer un enseigant via son ID
     public function deleteOneTeacher($id){
@@ -245,5 +234,27 @@
         $this->unsetData($reqExecuted);
         return $results;
     }
+
+    //Connexion d'un utilisateur à la bdd
+    // public function connectUser($login, $psw){
+    //     $query = "SELECT * FROM t_user WHERE useLogin = ? AND usePassword = ?) VALUES (:useLogin, :usePassword)";
+    //     $binds = array(
+    //         0 => array(
+    //             'field' => ':useLogin',
+    //             'value' => $useLogin,
+    //             'type' => PDO::PARAM_INT
+    //         ),
+    //         1 => array(
+    //             'field' => ':usePassword',
+    //             'value' => $usePassword,
+    //             'type' => PDO::PARAM_STR
+    //         )    
+    //     );
+    //     $reqExecuted = $this->queryPrepareExecute($query, $binds);
+    //     $results = $this->formatData($reqExecuted);
+    //     $this->unsetData($reqExecuted);
+    //     return $results;
+    // }
+
 }
 ?>
