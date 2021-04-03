@@ -41,17 +41,17 @@ $db = new Database();
             </nav>
             <?php
 
-// if(isset($_POST["forminscription"]))
-// {
-//     if(!empty($_POST["login"]) || (!empty($_POST["psw"])))
-//     {
-//         $user = $db->connectUser($_POST['login'], $_POST['psw']);
-//     }
-//     else
-//     {
-//         $erreur = "Veuillez renseignez tous les champs !";
-//         echo $erreur;
-//     }
-// }
+if(isset($_POST["forminscription"]))
+{
+    if(!empty($_POST["login"]) || (!empty($_POST["psw"])))
+    {
+        $user = $db->connectUser($_POST['login'], $_POST['psw']);
+    }
+    else
+    {
+        $erreur = "Veuillez renseignez tous les champs !";
+        echo $erreur;
+    }
+}
 
 ?>

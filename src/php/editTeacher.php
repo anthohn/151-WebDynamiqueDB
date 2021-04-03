@@ -52,12 +52,8 @@ $sections = $db->getAllSections();
         </li>
         <li>
         <select name="section" id="section">
-            <?php foreach($OneSections as $OneSection) : ?>
-                <option value="0"><?= $OneSection["secName"] ?></option>
-            <?php endforeach; ?>
-
             <?php foreach($sections as $section) : ?>
-                <option value="<?= $section["idSection"]; ?>"><?= $section["secName"]; ?></option>
+                <option name="section" value="<?= $section["idSection"]; ?>"><?= $section["secName"]; ?></option>
             <?php endforeach; ?>
            
     </select>
@@ -78,7 +74,7 @@ $sections = $db->getAllSections();
 
 if(isset($_POST["btnSubmit"]))
 {
-    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]))
+    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]) || empty($_POST["section"]))
     {
         echo "<h1 style='background-color:red; border-radius: 20px; text-align:center; height: 40px; width: 650px;'>Veuillez renseigner tous les champs !</h1>";
     } 
@@ -86,7 +82,7 @@ if(isset($_POST["btnSubmit"]))
         $teachers = $db->getAllTeachers();
 
         $db->updateTeacher($id, $_POST['name'], $_POST['surname'], $_POST['gender'], $_POST['nickname'], $_POST['origin']);
-        // $db->addTeacherSection($section['idSection'], max($teachers['idTeachers']) + 1);
+        // $db->updateSectionTeacher($section['idSection'], max($teachers['idTeachers']) + 1);
         echo "<h1 style='background-color:green; border-radius: 20px; text-align:center; height: 40px; width: 650px; color: white;'>L'enseigant a bien été modifié !</h1>";
     }
 }
