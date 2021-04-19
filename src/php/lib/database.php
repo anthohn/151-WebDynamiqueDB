@@ -215,7 +215,7 @@
                 'type' => PDO::PARAM_STR
             )
         );
-        $results = $this->queryPrepareExecute($query, $binds);
+        $results = $this->queryPrepareExecute($querinds);
         return $results;
     }  
 
@@ -236,21 +236,12 @@
     }
 
     //Connexion d'un utilisateur à la bdd
-    public function connectUser($login, $psw){
-        $query = "SELECT * FROM t_user WHERE useLogin = ? AND usePassword = ?) VALUES (:useLogin, :usePassword)";
-        $binds = array(
-            0 => array(
-                'field' => ':useLogin',
-                'value' => $useLogin,
-                'type' => PDO::PARAM_INT
-            ),
-            1 => array(
-                'field' => ':usePassword',
-                'value' => $usePassword,
-                'type' => PDO::PARAM_STR
-            )    
-        );
-        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+    public function connectUser(){
+        $query = "SELECT * FROM t_user";
+        
+        
+
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;

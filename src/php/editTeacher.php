@@ -6,7 +6,7 @@ $OneSections = $db->getOneTeacherSection($id);
 $sections = $db->getAllSections(); 
 ?> 
 
-
+<?php if(isLogged() && (isAdmin())): ?>
 <?php foreach($teachers as $teacher): ?> 
 <form method="POST" action="editTeacher.php?idTeacher=<?= $teacher["idTeacher"]; ?>"> 
     <h2>Modifications d'un enseignant</h2>
@@ -87,4 +87,6 @@ if(isset($_POST["btnSubmit"]))
     }
 }
 ?>
+            <?php endif; ?>
+
 <?php require "footer.php";?>

@@ -37,11 +37,11 @@ CREATE TABLE t_teaches(
 CREATE TABLE t_user(
 	idUser int AUTO_INCREMENT PRIMARY KEY,
 	useLogin varchar(50) NOT NULL,
-	usePassword varchar(62) NOT NULL,
-	useIsAdmin smallint(1) NOT NULL);
+	usePassword varchar(255) NOT NULL,
+	useIsAdmin BOOLEAN NOT NULL);
 
 INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
-("admin", "admin", 1
+("admin", "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1
 );
 
 INSERT INTO t_section (secName) VALUES 
